@@ -1,5 +1,9 @@
 const fastify = require("fastify")({ logger: true });
 
+fastify.get("/items", (req, reply) => {
+  reply.send({ test: "hello" });
+});
+
 const PORT = process.env.PORT || 5000;
 
 const start = async () => {
