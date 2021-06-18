@@ -1,0 +1,17 @@
+{
+  "name": "fastify-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "author": "Somsubhra Das",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^3.18.0",
+    "fastify-swagger": "^4.7.0",
+    "uuid": "^8.3.2"
+  }
+}
