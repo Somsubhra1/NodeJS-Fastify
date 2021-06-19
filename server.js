@@ -1,7 +1,18 @@
 const fastify = require("fastify")({ logger: true });
+const items = require("./items");
 
 fastify.get("/items", (req, reply) => {
-  reply.send({ test: "hello" });
+  // Can also send response directly through return
+  // return items;
+  reply.send(items);
+});
+
+fastify.get("/items/:id", (req, reply) => {
+  const { id } = req.params;
+
+  const item = items.find((item) => item.id === id);
+
+  reply.send(item);
 });
 
 const PORT = process.env.PORT || 5000;
