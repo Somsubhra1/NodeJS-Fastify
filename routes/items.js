@@ -1,4 +1,4 @@
-const items = require("../items");
+// const items = require("../items");
 const { getItems, getItem } = require("../controllers/items");
 
 const Item = {
