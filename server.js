@@ -1,19 +1,22 @@
 const fastify = require("fastify")({ logger: true });
-const items = require("./items");
+// const items = require("./items");
 
-fastify.get("/items", (req, reply) => {
-  // Can also send response directly through return
-  // return items;
-  reply.send(items);
-});
+// fastify.get("/items", (req, reply) => {
+//   // Can also send response directly through return
+//   // return items;
+//   reply.send(items);
+// });
 
-fastify.get("/items/:id", (req, reply) => {
-  const { id } = req.params;
+// fastify.get("/items/:id", (req, reply) => {
+//   const { id } = req.params;
 
-  const item = items.find((item) => item.id === id);
+//   const item = items.find((item) => item.id === id);
 
-  reply.send(item);
-});
+//   reply.send(item);
+// });
+
+// Register multiple routes files
+fastify.register(require("./routes/items"));
 
 const PORT = process.env.PORT || 5000;
 
