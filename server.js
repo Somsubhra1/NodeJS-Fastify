@@ -15,6 +15,14 @@ const fastify = require("fastify")({ logger: true });
 //   reply.send(item);
 // });
 
+fastify.register(require("fastify-swagger"), {
+  exposeRoute: true,
+  routePrefix: "/docs",
+  swagger: {
+    info: { title: "fastify-api" },
+  },
+});
+
 // Register multiple routes files
 fastify.register(require("./routes/items"));
 
